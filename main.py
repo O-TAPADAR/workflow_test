@@ -35,8 +35,8 @@ def extract_text_and_coordinates(ocr_data):
     
     return words, coordinates, confidences
 
-# Step 3: Process Text with an LLM
-def group_text_with_openai(words, coordinates, confidences):
+# Step 3: Extract identifiers using an LLM
+def group_text_with_openai(words, coordinates):
     # Prepare the OCR output for the LLM input
     ocr_input = "\n".join([f"Word: '{word}', Coordinates: {coord}" for word, coord in zip(words, coordinates)])
     
